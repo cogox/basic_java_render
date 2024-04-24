@@ -3,7 +3,7 @@ import javax.swing.JFrame;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
-public class WindowTest extends Canvas implements Runnable {
+public class Main extends Canvas implements Runnable {
 
     public static JFrame frame;
     private Thread thread;
@@ -14,7 +14,7 @@ public class WindowTest extends Canvas implements Runnable {
 
     private BufferedImage image;
 
-    public WindowTest () {
+    public Main () {
         setPreferredSize(new Dimension(WIDTH*SCALE, HEIGHT*SCALE));
         initFrame();
         image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
@@ -45,8 +45,8 @@ public class WindowTest extends Canvas implements Runnable {
     }
 
     public static void main(String[] args) {
-        WindowTest windowTest = new WindowTest();
-        windowTest.start();
+        Main main = new Main();
+        main.start();
     }
 
     public void tick () {}
